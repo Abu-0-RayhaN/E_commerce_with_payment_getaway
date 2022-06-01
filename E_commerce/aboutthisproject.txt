@@ -1,0 +1,2 @@
+about LOGIN_URL==in settings.py i have written login url so that if some one wants to access some without loggin in they would be redirected to login page.login required tag should be working by that.
+
