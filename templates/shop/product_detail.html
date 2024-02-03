@@ -32,7 +32,15 @@ Product Detail
                             <p>{{object.detail_text|linebreaks}}</p>
                         </dd>
                     </dl>
-                    <a href="{% url 'add' pk=object.pk %}" class="btn btn-lg btn-outline-primary text-uppercase"><i class="fas fa-shopping-cart">Add To Cart</i></a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'add' pk=object.pk %}" class="btn btn-lg btn-outline-primary text-uppercase">
+                        <i class="fas fa-shopping-cart"></i> Add To Cart
+                    </a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-lg btn-outline-primary text-uppercase">
+                        <i class="fas fa-sign-in-alt"></i> Log In to Add To Cart
+                    </a>
+                    {% endif %}
                 </article>
             </aside>
         </div>
